@@ -127,9 +127,7 @@ Inviter.Prompt = function(options)
 	end)
 
 	if success == false or inviteData == nil then
-		error("Something went wrong while attempting to obtain invite data. Check if invite is valid.")
-    error(success,inviteData)
-    return
+		error("Something went wrong while attempting to obtain invite data. Check if invite is valid.",inviteData,success); return
 	end
 	
 	local Prompt = {}
