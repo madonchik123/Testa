@@ -125,10 +125,6 @@ Inviter.Prompt = function(options)
 	local success, inviteData = pcall(function()
 		return HS:JSONDecode(Functions.Request({ Url = "https://ptb.discord.com/api/invites/".. getInviteCode(options.invite), Method = "GET" }).Body)
 	end)
-
-	if success == false or inviteData == nil then
-		error("Something went wrong while attempting to obtain invite data. Check if invite is valid.",inviteData,success); return
-	end
 	
 	local Prompt = {}
 
